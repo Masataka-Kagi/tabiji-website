@@ -165,13 +165,17 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
-      transition: transform 0.18s ease, opacity 0.18s ease;
+      transition: transform 0.18s ease;
     }
 
-    .store-badge:hover {
+    .store-badge:not([aria-disabled="true"]):hover {
       transform: translateY(-2px);
-      opacity: 0.85;
+    }
+
+    .store-badge[aria-disabled="true"] {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.55;
     }
 
     .store-badge img {
@@ -327,10 +331,10 @@
             <div class="separator download-label">アプリダウンロードページへ</div>
 
             <div class="store-row">
-              <a class="store-badge" href="#" aria-label="App Storeでtabijiをダウンロード">
+              <a class="store-badge" href="#" aria-disabled="true" tabindex="-1" aria-label="App Store版は準備中です">
                 <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="132" height="44" />
               </a>
-              <a class="store-badge" href="#" aria-label="Google Playでtabijiを手に入れよう">
+              <a class="store-badge" href="#" aria-disabled="true" tabindex="-1" aria-label="Google Play版は準備中です">
                 <img src="assets/google-play-badge.svg" alt="Google Play で手に入れよう" width="113" height="44" />
               </a>
             </div>
