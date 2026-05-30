@@ -29,7 +29,6 @@
       --ink: #0b0b0b;
       --muted: #737373;
       --line: #e6e6e6;
-      --line-dark: #d6d6d6;
       --soft: #fafafa;
     }
 
@@ -196,7 +195,7 @@
         送信ボタンを押すと、お使いの端末のメールアプリが起動します。内容をご確認のうえ、そのまま送信してください。
       </p>
 
-      <form id="contactForm" novalidate>
+      <form id="contactForm" action="mailto:contact.tabiji@gmail.com" method="post" enctype="text/plain">
         <div class="field">
           <label for="name">お名前<span class="required">*</span></label>
           <input type="text" id="name" name="name" required autocomplete="name" />
@@ -214,7 +213,7 @@
 
         <div class="field">
           <label for="message">お問い合わせ内容<span class="required">*</span></label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" required maxlength="2000"></textarea>
         </div>
 
         <button type="submit" class="submit">メールアプリで送信</button>
@@ -243,26 +242,30 @@
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        if (!form.reportValidity()) {
+          return;
+        }
+
         var name = document.getElementById("name").value.trim();
         var email = document.getElementById("email").value.trim();
         var subject = document.getElementById("subject").value.trim();
         var message = document.getElementById("message").value.trim();
 
-        if (!name || !email || !subject || !message) {
-          form.reportValidity();
-          return;
-        }
-
         var body =
-          "お名前: " + name + "\n" +
-          "メールアドレス: " + email + "\n\n" +
-          "------ お問い合わせ内容 ------\n" +
-          message + "\n";
+          "お名前: " + name + "\r\n" +
+          "メールアドレス: " + email + "\r\n\r\n" +
+          "------ お問い合わせ内容 ------\r\n" +
+          message + "\r\n";
 
         var mailto =
           "mailto:contact.tabiji@gmail.com" +
           "?subject=" + encodeURIComponent("[tabijiお問い合わせ] " + subject) +
           "&body=" + encodeURIComponent(body);
+
+        if (mailto.length > 1900) {
+          alert("お問い合わせ内容が長すぎます。短くするか、直接 contact.tabiji@gmail.com までメールしてください。");
+          return;
+        }
 
         window.location.href = mailto;
       });
