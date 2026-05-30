@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>利用規約 | tabiji</title>
+  <meta name="description" content="tabijiの利用規約ページです。" />
+  <style>
+    :root {
+      --canvas: #b9b9b9;
+      --panel: #ffffff;
+      --ink: #0b0b0b;
+      --muted: #737373;
+      --line: #e6e6e6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      color: var(--ink);
+      background: var(--canvas);
+      letter-spacing: -0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .stage {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 6vw, 78px);
+    }
+
+    .shell {
+      width: min(100%, 760px);
+      background: var(--panel);
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.12);
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 850;
+      letter-spacing: -0.06em;
+    }
+
+    .updated {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    h2 {
+      margin: 28px 0 8px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    p, li {
+      margin: 6px 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    ul { padding-left: 20px; }
+
+    .back {
+      display: inline-block;
+      margin-top: 32px;
+      font-size: 12px;
+      font-weight: 720;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+    }
+
+    .back:hover { color: var(--ink); border-color: var(--ink); }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <article class="shell">
+      <h1>利用規約</h1>
+      <p class="updated">最終更新日: 2026年5月30日</p>
+
+      <p>
+        本利用規約(以下「本規約」)は、tabiji(以下「本アプリ」)の利用条件を定めるものです。
+        ご利用にあたっては、本規約に同意いただいたものとみなします。
+      </p>
+
+      <h2>第1条(適用)</h2>
+      <p>本規約は、本アプリの利用に関する一切の関係に適用されます。</p>
+
+      <h2>第2条(禁止事項)</h2>
+      <ul>
+        <li>法令または公序良俗に違反する行為</li>
+        <li>本アプリの運営を妨げる行為</li>
+        <li>他のユーザーまたは第三者の権利を侵害する行為</li>
+        <li>不正アクセスやリバースエンジニアリング等の行為</li>
+      </ul>
+
+      <h2>第3条(免責事項)</h2>
+      <p>
+        本アプリの利用により生じた損害について、提供者は一切の責任を負わないものとします。
+        ただし、適用される法令により責任を免除できない場合はこの限りではありません。
+      </p>
+
+      <h2>第4条(規約の変更)</h2>
+      <p>
+        提供者は、必要と判断した場合、ユーザーに通知することなく本規約を変更できるものとします。
+        変更後の規約は、本アプリ上に掲載した時点で効力を生じます。
+      </p>
+
+      <h2>第5条(お問い合わせ)</h2>
+      <p>
+        本規約に関するお問い合わせは
+        <a href="mailto:contact.tabiji@gmail.com">contact.tabiji@gmail.com</a>
+        までお願いいたします。
+      </p>
+
+      <a class="back" href="index.html">← トップへ戻る</a>
+    </article>
+  </main>
+</body>
+</html>
