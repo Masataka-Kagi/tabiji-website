@@ -77,13 +77,13 @@
     .brand {
       display: grid;
       justify-items: center;
-      gap: 9px;
+      gap: 11px;
     }
 
     .brand-mark {
       position: relative;
-      width: 18px;
-      height: 22px;
+      width: 26px;
+      height: 32px;
     }
 
     .brand-mark::before,
@@ -95,21 +95,21 @@
     }
 
     .brand-mark::before {
-      width: 8px;
-      height: 13px;
-      left: 2px;
+      width: 12px;
+      height: 19px;
+      left: 3px;
       top: 1px;
     }
 
     .brand-mark::after {
-      width: 7px;
-      height: 10px;
-      right: 2px;
+      width: 10px;
+      height: 15px;
+      right: 3px;
       bottom: 1px;
     }
 
     .brand-name {
-      font-size: 13px;
+      font-size: 17px;
       line-height: 1;
       font-weight: 850;
       letter-spacing: -0.06em;
@@ -117,7 +117,7 @@
 
     .main {
       align-self: center;
-      width: min(100%, 340px);
+      width: min(100%, 380px);
       justify-self: center;
       text-align: center;
       padding-top: 10px;
@@ -126,9 +126,9 @@
     h1 {
       margin: 0;
       font-size: clamp(34px, 4vw, 46px);
-      line-height: 1.02;
+      line-height: 1.18;
       font-weight: 850;
-      letter-spacing: -0.085em;
+      letter-spacing: -0.04em;
     }
 
     .lead {
@@ -191,13 +191,19 @@
     }
 
     .icon {
-      width: 15px;
-      height: 15px;
+      width: 16px;
+      height: 16px;
       display: inline-grid;
       place-items: center;
-      font-size: 12px;
       line-height: 1;
       letter-spacing: 0;
+    }
+
+    .icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: currentColor;
     }
 
     .separator {
@@ -259,9 +265,9 @@
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 22px;
+      gap: 24px;
       color: #8b8b8b;
-      font-size: 10.5px;
+      font-size: 12.5px;
       letter-spacing: -0.01em;
     }
 
@@ -348,11 +354,22 @@
 
             <div class="store-row">
               <a class="btn" href="#" aria-label="App Storeでtabijiを見る">
-                <span class="icon"></span>
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                    <path d="M16.365 1.43c0 1.14-.46 2.23-1.21 3.03-.81.85-2.13 1.5-3.18 1.42-.13-1.09.42-2.23 1.16-3.01.83-.88 2.24-1.55 3.23-1.44zM20.5 17.34c-.55 1.27-.81 1.84-1.52 2.97-1 1.58-2.41 3.54-4.16 3.55-1.55.02-1.95-1.01-4.06-1-2.11.01-2.55 1.02-4.1 1-1.75-.01-3.08-1.79-4.08-3.36-2.8-4.4-3.09-9.56-1.37-12.3 1.22-1.95 3.15-3.09 4.96-3.09 1.84 0 3 1.01 4.52 1.01 1.47 0 2.37-1.01 4.5-1.01 1.61 0 3.32.88 4.54 2.4-4 2.19-3.34 7.93.77 9.83z"/>
+                  </svg>
+                </span>
                 <span>App Store</span>
               </a>
               <a class="btn" href="#" aria-label="Google Playでtabijiを見る">
-                <span class="icon">G</span>
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                    <path d="M3.6 1.6c-.36.39-.6.99-.6 1.78v17.24c0 .79.24 1.39.6 1.78l.07.07L13.3 12.6v-.2L3.67 1.53l-.07.07z" fill="#34a3ff"/>
+                    <path d="M16.65 15.95L13.3 12.6v-.2L16.65 9.05l.08.05 3.97 2.26c1.13.64 1.13 1.69 0 2.33l-3.97 2.26-.08.05z" fill="#ffcd40"/>
+                    <path d="M16.73 15.9L13.2 12.5 3.6 22.4c.37.4 1 .45 1.7.06l11.43-6.56" fill="#ff4a3d"/>
+                    <path d="M16.73 9.1L5.3 2.54c-.7-.4-1.33-.35-1.7.06l9.6 9.9 3.53-3.4z" fill="#00d96b"/>
+                  </svg>
+                </span>
                 <span>Google Play</span>
               </a>
             </div>
