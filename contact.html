@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ | tabiji</title>
+  <meta name="description" content="tabijiのお問い合わせページです。" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-mark-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo-mark-180.png" />
+  <meta name="theme-color" content="#b9b9b9" />
+  <meta property="og:title" content="お問い合わせ | tabiji" />
+  <meta property="og:description" content="tabijiのお問い合わせページです。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="tabiji" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:image" content="assets/logo-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="tabiji - 旅した場所を、あなたの地図に。" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="お問い合わせ | tabiji" />
+  <meta name="twitter:description" content="tabijiのお問い合わせページです。" />
+  <meta name="twitter:image" content="assets/logo-1200x630.png" />
+  <style>
+    :root {
+      --canvas: #b9b9b9;
+      --panel: #ffffff;
+      --ink: #0b0b0b;
+      --muted: #737373;
+      --line: #e6e6e6;
+      --line-dark: #d6d6d6;
+      --soft: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      color: var(--ink);
+      background: var(--canvas);
+      letter-spacing: -0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .stage {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 6vw, 78px);
+    }
+
+    .shell {
+      width: min(100%, 620px);
+      background: var(--panel);
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.12);
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 850;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #1a1a1a;
+    }
+
+    .required {
+      color: #c0392b;
+      font-weight: 800;
+      margin-left: 4px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font: inherit;
+      font-size: 13px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+      letter-spacing: -0.015em;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    .submit {
+      margin-top: 6px;
+      appearance: none;
+      border: none;
+      background: var(--ink);
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      padding: 14px 22px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .submit:hover {
+      transform: translateY(-1px);
+      background: #1f1f1f;
+    }
+
+    .submit:active {
+      transform: translateY(0);
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      font-size: 11.5px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .direct {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .direct a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 32px;
+      font-size: 12px;
+      font-weight: 720;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+    }
+
+    .back:hover { color: var(--ink); border-color: var(--ink); }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <article class="shell">
+      <h1>お問い合わせ</h1>
+      <p class="lead">
+        tabijiに関するご質問、ご要望、不具合のご報告などは、以下のフォームよりお気軽にお問い合わせください。<br />
+        送信ボタンを押すと、お使いの端末のメールアプリが起動します。内容をご確認のうえ、そのまま送信してください。
+      </p>
+
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">お名前<span class="required">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="email">メールアドレス<span class="required">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="subject">件名<span class="required">*</span></label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+
+        <div class="field">
+          <label for="message">お問い合わせ内容<span class="required">*</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit">メールアプリで送信</button>
+      </form>
+
+      <div class="hint">
+        ご返信は contact.tabiji@gmail.com からお送りいたします。<br />
+        お使いのメール環境によっては、迷惑メールフォルダに振り分けられる場合がありますのでご注意ください。
+      </div>
+
+      <p class="direct">
+        メールアプリが起動しない場合は、直接
+        <a href="mailto:contact.tabiji@gmail.com">contact.tabiji@gmail.com</a>
+        までご連絡ください。
+      </p>
+
+      <a class="back" href="index.html">← トップへ戻る</a>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("contactForm");
+      if (!form) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var subject = document.getElementById("subject").value.trim();
+        var message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !subject || !message) {
+          form.reportValidity();
+          return;
+        }
+
+        var body =
+          "お名前: " + name + "\n" +
+          "メールアドレス: " + email + "\n\n" +
+          "------ お問い合わせ内容 ------\n" +
+          message + "\n";
+
+        var mailto =
+          "mailto:contact.tabiji@gmail.com" +
+          "?subject=" + encodeURIComponent("[tabijiお問い合わせ] " + subject) +
+          "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailto;
+      });
+    })();
+  </script>
+</body>
+</html>
